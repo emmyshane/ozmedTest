@@ -3,7 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { FileText, TrendingUp, Code, UserCheck, DollarSign, Settings } from "lucide-react";
+import { FileText, TrendingUp, Code, UserCheck, Briefcase, Award } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -20,64 +20,64 @@ const Services = () => {
       link: "/services/medical-billing"
     },
     {
-      icon: TrendingUp,
-      title: "Revenue Cycle Management",
-      description: "Complete oversight of your practice's revenue cycle. We optimize every step from patient scheduling to final payment, ensuring maximum reimbursement and cash flow.",
-      benefits: [
-        "End-to-end RCM solutions",
-        "Performance analytics and KPIs",
-        "Process optimization",
-        "Cash flow improvement"
-      ],
-      link: "/services/revenue-cycle"
-    },
-    {
       icon: Code,
-      title: "Medical Coding & Compliance",
+      title: "Medical Coding Services",
       description: "Expert ICD-10, CPT, and HCPCS coding by certified professionals. We ensure accuracy, compliance, and proper reimbursement for all services rendered.",
       benefits: [
         "AAPC/AHIMA certified coders",
+        "98% coding accuracy rate",
         "Specialty-specific expertise",
-        "Compliance audits",
-        "Documentation improvement"
+        "Compliance audits"
       ],
       link: "/services/medical-coding"
     },
     {
       icon: UserCheck,
-      title: "Credentialing & Enrollment",
+      title: "Medical Credentialing Services",
       description: "Complete provider credentialing and payer enrollment services. We handle all paperwork and follow-up to get you enrolled and billing quickly.",
       benefits: [
-        "Initial provider enrollment",
+        "45-60 day average timeline",
+        "100% application accuracy",
         "CAQH profile management",
-        "Re-credentialing services",
-        "Payer contract negotiations"
+        "Re-credentialing services"
       ],
       link: "/services/credentialing"
     },
     {
-      icon: DollarSign,
-      title: "AR Management",
-      description: "Proactive accounts receivable management to accelerate cash flow. We follow up on outstanding claims and patient balances to ensure timely payment.",
+      icon: Briefcase,
+      title: "Front Office Management",
+      description: "Professional front office support that enhances patient experience, optimizes scheduling, and allows your staff to focus on in-person patient care.",
       benefits: [
-        "Outstanding claims follow-up",
-        "Aging report analysis",
-        "Patient collections",
-        "Payment plan management"
+        "24/7 phone answering",
+        "95% appointment fill rate",
+        "Bilingual support",
+        "Insurance verification"
       ],
-      link: "/services/ar-management"
+      link: "/services/front-office"
     },
     {
-      icon: Settings,
-      title: "Practice Management",
-      description: "Comprehensive practice management solutions to streamline operations. We help optimize workflows, train staff, and implement best practices.",
+      icon: TrendingUp,
+      title: "RCM Services",
+      description: "Complete revenue cycle solutions that optimize every step from patient registration to final payment, maximizing cash flow and reducing administrative burden.",
       benefits: [
-        "Workflow optimization",
-        "Staff training and support",
-        "Technology integration",
-        "Best practice implementation"
+        "End-to-end RCM solutions",
+        "30% reduction in AR days",
+        "98% clean claim rate",
+        "Comprehensive analytics"
       ],
-      link: "/services/practice-management"
+      link: "/services/rcm"
+    },
+    {
+      icon: Award,
+      title: "PCMH Services",
+      description: "Expert guidance to achieve and maintain NCQA Patient-Centered Medical Home recognition, transforming your practice and unlocking enhanced reimbursement.",
+      benefits: [
+        "NCQA PCMH expertise",
+        "Gap analysis & roadmap",
+        "Quality measure tracking",
+        "Ongoing support"
+      ],
+      link: "/services/pcmh"
     }
   ];
 
@@ -139,7 +139,7 @@ const Services = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">
-                Why Choose MedBill Pro?
+                Why Choose OZMED Healthcare Services?
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-background p-8 rounded-xl shadow-soft">

@@ -3,15 +3,72 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, TrendingUp, Clock, Shield } from "lucide-react";
+import { CheckCircle2, TrendingUp, Clock, Shield, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useState, useEffect } from "react";
 
 const MedicalBilling = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const integrationLogos = [
+    "/sliding/advanced-md.png",
+    "/sliding/athena.png",
+    "/sliding/brightree.png",
+    "/sliding/carecloud.png",
+    "/sliding/chirotouch.png",
+    "/sliding/curemd.png",
+    "/sliding/digi-dms.png",
+    "/sliding/dr-chrono.png",
+    "/sliding/eclinical-works.png",
+    "/sliding/ehi.png",
+    "/sliding/epic.png",
+    "/sliding/ethomas.png",
+    "/sliding/health-fusion.png",
+    "/sliding/in-sync.png",
+    "/sliding/intergy.png",
+    "/sliding/kareo.png",
+    "/sliding/luminello.png",
+    "/sliding/md-land.png",
+    "/sliding/office-ally.png",
+    "/sliding/rxnt.png",
+    "/sliding/simple-practice.png",
+    "/sliding/valant.png"
+  ];
+
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % integrationLogos.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handlePrevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? integrationLogos.length - 1 : prev - 1));
+  };
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % integrationLogos.length);
+  };
+
+  const getVisibleLogos = () => {
+    const visible = [];
+    for (let i = 0; i < 7; i++) {
+      const index = (currentSlide + i) % integrationLogos.length;
+      visible.push({ src: integrationLogos[index], key: `${index}-${i}` });
+    }
+    return visible;
+  };
+
+  // Create extended array for infinite loop effect
+  const extendedLogos = [...integrationLogos, ...integrationLogos, ...integrationLogos];
+
   const problems = [
     "Delayed payments affecting cash flow",
     "High claim denial rates",
@@ -132,6 +189,58 @@ const MedicalBilling = () => {
                     <span className="text-muted-foreground">{benefit}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* EHR Integration Slider */}
+        <section className="py-12 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="relative px-16">
+                {/* Left Arrow */}
+                <button
+                  onClick={handlePrevSlide}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-primary hover:text-primary/80 transition-colors duration-300"
+                  aria-label="Previous"
+                >
+                  <ChevronLeft className="w-12 h-12" />
+                </button>
+
+                {/* Slider Container */}
+                <div className="overflow-hidden">
+                  <div 
+                    className="flex items-center gap-6 transition-transform duration-700 ease-in-out"
+                    style={{ 
+                      transform: `translateX(calc(-${currentSlide} * (14.2857% + 24px)))`,
+                      willChange: 'transform'
+                    }}
+                  >
+                    {extendedLogos.map((logo, index) => (
+                      <div
+                        key={index}
+                        className="flex-shrink-0 flex items-center justify-center"
+                        style={{ width: '14.2857%', minWidth: '120px', minHeight: '120px' }}
+                      >
+                        <img
+                          src={logo}
+                          alt={`Integration ${(index % integrationLogos.length) + 1}`}
+                          className="max-w-full max-h-20 object-contain"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Arrow */}
+                <button
+                  onClick={handleNextSlide}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-primary hover:text-primary/80 transition-colors duration-300"
+                  aria-label="Next"
+                >
+                  <ChevronRight className="w-12 h-12" />
+                </button>
               </div>
             </div>
           </div>

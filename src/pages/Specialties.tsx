@@ -5,83 +5,49 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
   Stethoscope, Heart, Sparkles, Baby, Bone, Brain, 
-  Building2, FlaskConical, Ambulance, Users, Activity, Pill
+  Building2, FlaskConical, Ambulance, Users, Activity, Pill,
+  Syringe, Eye, Scissors, Cross, TestTube, Zap, Wind, Droplet
 } from "lucide-react";
 
 const Specialties = () => {
   const specialties = [
-    {
-      icon: Stethoscope,
-      name: "Primary Care",
-      description: "Family medicine, internal medicine, and general practice billing with expertise in preventive care, chronic care management, and Medicare wellness visits.",
-      link: "/specialties/primary-care"
-    },
-    {
-      icon: Heart,
-      name: "Cardiology",
-      description: "Specialized billing for diagnostic testing, interventional procedures, and cardiac imaging with in-depth knowledge of complex cardiovascular codes.",
-      link: "/specialties/cardiology"
-    },
-    {
-      icon: Sparkles,
-      name: "Dermatology",
-      description: "Expert billing for medical and cosmetic dermatology including procedures, biopsies, and surgical services with proper modifiers and documentation.",
-      link: "/specialties/dermatology"
-    },
-    {
-      icon: Baby,
-      name: "Pediatrics",
-      description: "Comprehensive pediatric billing including well-child visits, immunizations, and specialized care with expertise in EPSDT and VFC programs.",
-      link: "/specialties/pediatrics"
-    },
-    {
-      icon: Bone,
-      name: "Orthopedics",
-      description: "Specialized orthopedic billing for surgeries, procedures, and imaging with expertise in complex surgical codes and ASC billing.",
-      link: "/specialties/orthopedics"
-    },
-    {
-      icon: Brain,
-      name: "Mental Health",
-      description: "Behavioral health billing for psychiatry, psychology, and counseling with expertise in psychotherapy codes and documentation requirements.",
-      link: "/specialties/mental-health"
-    },
-    {
-      icon: Building2,
-      name: "Surgery Centers",
-      description: "ASC billing expertise including facility and professional fees with comprehensive knowledge of surgical procedures and anesthesia billing.",
-      link: "/specialties/surgery-centers"
-    },
-    {
-      icon: FlaskConical,
-      name: "Labs",
-      description: "Laboratory billing services including pathology, clinical lab, and diagnostic testing with expertise in panel codes and proper ordering.",
-      link: "/specialties/labs"
-    },
-    {
-      icon: Ambulance,
-      name: "Urgent Care",
-      description: "Fast-paced urgent care billing with expertise in E/M levels, procedures, and X-ray billing with quick turnaround times.",
-      link: "/specialties/urgent-care"
-    },
-    {
-      icon: Users,
-      name: "Multi-Specialty",
-      description: "Comprehensive billing for multi-specialty practices with expertise across various specialties and complex workflow management.",
-      link: "/specialties/multi-specialty"
-    },
-    {
-      icon: Activity,
-      name: "Physical Therapy",
-      description: "PT/OT billing expertise including therapy codes, time-based billing, and functional reporting with compliance focus.",
-      link: "/specialties/physical-therapy"
-    },
-    {
-      icon: Pill,
-      name: "Gastroenterology",
-      description: "GI billing including endoscopy procedures, colonoscopies, and diagnostic services with expertise in bundling and modifiers.",
-      link: "/specialties/gastroenterology"
-    }
+    { icon: Stethoscope, name: "Primary Care", description: "Family medicine, internal medicine, and general practice billing.", link: "/specialties/primary-care" },
+    { icon: Heart, name: "Cardiology", description: "Diagnostic testing, interventional procedures, and cardiac imaging billing.", link: "/specialties/cardiology" },
+    { icon: Sparkles, name: "Dermatology", description: "Medical and cosmetic dermatology, procedures, and surgical services.", link: "/specialties/dermatology" },
+    { icon: Baby, name: "Pediatric", description: "Well-child visits, immunizations, and specialized pediatric care.", link: "/specialties/pediatric" },
+    { icon: Pill, name: "Gastroenterology", description: "Endoscopy, colonoscopy, and GI diagnostic procedures.", link: "/specialties/gastroenterology" },
+    { icon: Ambulance, name: "Urgent Care", description: "Fast-paced urgent care E/M, procedures, and X-ray billing.", link: "/specialties/urgent-care" },
+    { icon: Brain, name: "Mental Health", description: "Psychiatry, psychology, and counseling services billing.", link: "/specialties/mental-health" },
+    { icon: Activity, name: "Physical Therapy", description: "PT/OT therapy codes, time-based billing, and functional reporting.", link: "/specialties/physical-therapy" },
+    { icon: Brain, name: "Neurology", description: "EMG, EEG, nerve studies, and neurological assessments.", link: "/specialties/neurology" },
+    { icon: Brain, name: "Neurosurgery", description: "Complex brain and spine surgery coding and billing.", link: "/specialties/neurosurgery" },
+    { icon: Heart, name: "Oncology", description: "Chemotherapy, radiation therapy, and cancer treatment billing.", link: "/specialties/oncology" },
+    { icon: Bone, name: "Podiatry", description: "Foot and ankle procedures, orthotics, and diabetic care.", link: "/specialties/podiatry" },
+    { icon: Eye, name: "Ophthalmology", description: "Eye exams, surgeries, and vision testing billing.", link: "/specialties/ophthalmology" },
+    { icon: Droplet, name: "Nephrology", description: "Dialysis, kidney disease management, and transplant coding.", link: "/specialties/nephrology" },
+    { icon: Syringe, name: "Anesthesia", description: "Time-based anesthesia billing with modifiers and complexity codes.", link: "/specialties/anesthesia" },
+    { icon: Zap, name: "Pain Management", description: "Interventional procedures and chronic pain treatment billing.", link: "/specialties/pain-management" },
+    { icon: Stethoscope, name: "Family Practice", description: "Comprehensive family care and preventive services billing.", link: "/specialties/family-practice" },
+    { icon: Cross, name: "Urology", description: "Urologic procedures, surgeries, and diagnostic testing.", link: "/specialties/urology" },
+    { icon: Stethoscope, name: "Physician Services", description: "Comprehensive physician billing across all specialties.", link: "/specialties/physician" },
+    { icon: TestTube, name: "Pathology", description: "Specimen analysis, cytology, and diagnostic lab testing.", link: "/specialties/pathology" },
+    { icon: Scissors, name: "General Surgery", description: "Surgical procedures, pre-op, and post-op billing.", link: "/specialties/general-surgery" },
+    { icon: Activity, name: "Wound Care", description: "Debridement, wound treatment, and hyperbaric therapy.", link: "/specialties/wound-care" },
+    { icon: FlaskConical, name: "Infectious Disease", description: "Complex treatment protocols and infusion therapy billing.", link: "/specialties/infectious-disease" },
+    { icon: Activity, name: "Occupational Therapy", description: "OT evaluations, treatments, and adaptive equipment billing.", link: "/specialties/occupational-therapy" },
+    { icon: Pill, name: "Endocrinology", description: "Diabetes management, thyroid disorders, and hormone therapy.", link: "/specialties/endocrinology" },
+    { icon: Bone, name: "Rheumatology", description: "Arthritis treatment, infusion therapy, and joint injections.", link: "/specialties/rheumatology" },
+    { icon: Building2, name: "Radiology", description: "Imaging studies, interventional radiology, and diagnostic coding.", link: "/specialties/radiology" },
+    { icon: Activity, name: "Chiropractic", description: "Spinal manipulation, therapeutic services, and wellness care.", link: "/specialties/chiropractic" },
+    { icon: Baby, name: "OB/GYN", description: "Obstetric care, gynecological procedures, and women's health.", link: "/specialties/obgyn" },
+    { icon: Activity, name: "Acupuncture", description: "Alternative medicine coding and insurance compliance.", link: "/specialties/acupuncture" },
+    { icon: Building2, name: "Observation Care", description: "Hospital observation coding and billing requirements.", link: "/specialties/observation-care" },
+    { icon: Sparkles, name: "Dental", description: "Dental procedures, periodontics, and oral surgery coding.", link: "/specialties/dental" },
+    { icon: Wind, name: "Pulmonology", description: "Respiratory procedures, pulmonary function tests, and sleep studies.", link: "/specialties/pulmonology" },
+    { icon: Droplet, name: "Hematology", description: "Blood disorders, transfusions, and hematologic treatments.", link: "/specialties/hematology" },
+    { icon: Stethoscope, name: "Rehab Services", description: "Rehabilitation facility billing for comprehensive rehab programs.", link: "/specialties/rehab" },
+    { icon: Users, name: "Geriatrics", description: "Medicare, long-term care, and elderly patient management.", link: "/specialties/geriatrics" },
+    { icon: Syringe, name: "Allergy & Immunology", description: "Testing, immunotherapy, and allergy treatment coding.", link: "/specialties/allergy-immunology" }
   ];
 
   return (
@@ -121,7 +87,7 @@ const Specialties = () => {
                   <div className="text-muted-foreground">Specialty-Specific CPT Codes We Handle</div>
                 </div>
                 <div className="bg-background p-6 rounded-xl shadow-soft">
-                  <div className="text-3xl font-bold text-secondary mb-2">12+</div>
+                  <div className="text-3xl font-bold text-secondary mb-2">35+</div>
                   <div className="text-muted-foreground">Medical Specialties Served</div>
                 </div>
                 <div className="bg-background p-6 rounded-xl shadow-soft">

@@ -8,11 +8,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-primary-foreground rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-xl">MB</span>
-              </div>
-              <span className="text-xl font-bold">MedBill Pro</span>
+            <div className="mb-4">
+              <img src="/ozlogo.png" alt="OZMED Healthcare Services" className="h-16 w-auto" />
             </div>
             <p className="text-primary-foreground/80 mb-4">
               Professional medical billing services helping healthcare providers maximize revenue and focus on patient care.
@@ -68,15 +65,15 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Mail className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />
-                <a href="mailto:info@medbillpro.com" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  info@medbillpro.com
+                <a href="mailto:info@ozmedhealthcare.com" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  info@ozmedhealthcare.com
                 </a>
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />
                 <span className="text-primary-foreground/80">
-                  123 Healthcare Blvd, Suite 500<br />
-                  Medical City, MC 12345
+                  1309 COFFEEN AVE STE 1200<br />
+                  Sheridan WY 82801
                 </span>
               </li>
             </ul>
@@ -86,7 +83,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-primary-foreground/80 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} MedBill Pro. All rights reserved.
+            © {new Date().getFullYear()} OZMED Healthcare Services. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <Link to="/privacy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
